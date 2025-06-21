@@ -35,6 +35,6 @@ Scenario outline : Validate search functionality by providing valid - Job title/
       
  Scenario: Validate search functionality by not providing any input
  When user clicks on search button
- Then results should be displayed based on the website behavior
+ Then results should be displayed with the message contains "jobs found" 
      
     
