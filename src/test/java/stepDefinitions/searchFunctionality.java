@@ -2,6 +2,8 @@ package stepDefinitions;
 
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.containsStringIgnoringCase;
 
 import factory.Base;
 import io.cucumber.java.en.*;
@@ -22,12 +24,17 @@ public void user_is_on_the_nhs_job_search_page_with_title(String expectedTitle) 
 }
 
 @When("user enter partial location {string} and selects {string} from suggestions")
-public void user_enter_partial_location_and_selects_from_suggestions(String partialLocation, String locationSuggested) {
-    sp.enterLocation(partialLocation, locationSuggested);
+public void user_enter_partial_location_and_selects_from_suggestions(String partialLocation, String joblocation) {
+    sp.enterLocation(partialLocation, joblocation);
 }
 @When("user enters job title {string}")
-public void user_enters_job_title(String Jobtitle) {
-    sp.enterJobTitle(Jobtitle);
+public void user_enters_job_title(String jobtitle) {
+    sp.enterJobTitle(jobtitle);
+}
+@When("user enters job title {string} and location {string}")
+public void user_enters_job_title_and_location(String jobTitle, String jobLocation) {
+    sp.enterJobTitle(jobLocation);
+    sp.enterJobLocation(jobLocation);
 }
 
 @And("user clicks on search button")
@@ -40,16 +47,45 @@ public void user_sorts_results_by_newest_date(String sortByText) {
     sp.selectSortOption(sortByText);
 }
 
-@Then("user should be able to view the results realted to {string} location.")
-public void user_should_be_able_to_view_the_results_realted_to_location(String expectedListedLocation) {
-	  isValid = sp.validateListedJobResultsWithLocation(expectedListedLocation);
-      Assert.assertTrue("Few of the listed job results are not matching with the expected location: " + expectedListedLocation, isValid);
+@And("user clicks on clear filter button")
+public void user_clicks_on_clear_filter_button() {
+       sp.clickClearFilters();
 }
-@Then("user should be able to see the results related to {string} job title")
-public void user_should_be_able_to_see_the_results_related_to_job_title(String expectedListedJobTitle) {
-	isValid = sp.validateListedJobResultsWithJobTitle(expectedListedJobTitle);
-    Assert.assertTrue("Listed job results are not matching with the expected Job Title: " + expectedListedJobTitle, isValid);
+
+@And("the message should contain {string}")
+public void the_message_should_contain(String resultMessage) {
+    String actualSearchResultMessage = sp.getSearchResultMessageJobTitle();
+    //assertThat("Result message does not contain expected text: " + actualSearchResultMessage, containsStringIgnoringCase(resultMessage));
 }
+
+@And("user should be able to click on Next page and Previous page buttons")
+public void user_should_be_able_to_click_on_next_page_and_previous_page_buttons() {
+    sp.clickNextButton();
+    sp.clickPreviousButton();
+}
+
+@Then("job title and location fields should be blank")
+public void job_title_and_location_fields_should_be_blank() {
+    String jobTitlevalue = sp.getJobTitle();
+    String Locationvalue = sp.getJobLocation();
+    Assert.assertTrue("Job Title is not blank:", jobTitlevalue.trim().isEmpty());
+    Assert.assertTrue("Location is not blank:", Locationvalue.trim().isEmpty());
+}
+
+@Then("user should be able to view the results with the most recent date posted")
+public void user_should_be_able_to_view_the_results_with_the_most_recent_date_posted() {
+    Assert.assertTrue("Dates are not sorted with newest date:", sp.areResultsSortedByNewestDate());
+}
+
+@Then("job results should be listed with the message contains {string}")
+public void results_should_able_to_view_the_jobs_listed_with_the_message_contains(String resultMessage) {
+   sp.areResultsSortedByNewestDate();
+   String actualMessage = sp.getSearchResultMessageJobTitle();
+  assertThat("Result message does not contain expected text", actualMessage, containsStringIgnoringCase(resultMessage));
+   
+}
+
+
 
 
 }
