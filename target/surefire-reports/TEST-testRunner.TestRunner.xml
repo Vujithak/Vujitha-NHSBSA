@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="testRunner.TestRunner" time="9.249" tests="1" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="testRunner.TestRunner" time="68.115" tests="13" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="21"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -15,7 +15,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="GB"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Eclipse Adoptium\jdk-21.0.7.6-hotspot\bin"/>
-    <property name="sun.java.command" value="C:\Users\HP\AppData\Local\Temp\surefire9970716462750380790\surefirebooter-20250622013941125_3.jar C:\Users\HP\AppData\Local\Temp\surefire9970716462750380790 2025-06-22T01-39-40_427-jvmRun1 surefire-20250622013941125_1tmp surefire_0-20250622013941125_2tmp"/>
+    <property name="sun.java.command" value="C:\Users\HP\AppData\Local\Temp\surefire9287133699342530164\surefirebooter-20250622201148694_3.jar C:\Users\HP\AppData\Local\Temp\surefire9287133699342530164 2025-06-22T20-11-48_246-jvmRun1 surefire-20250622201148694_1tmp surefire_0-20250622201148694_2tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="C:\Users\HP\eclipse-workspace\NhsJobSearchAutomation\target\test-classes;C:\Users\HP\eclipse-workspace\NhsJobSearchAutomation\target\classes;C:\Users\HP\.m2\repository\org\seleniumhq\selenium\selenium-java\4.21.0\selenium-java-4.21.0.jar;C:\Users\HP\.m2\repository\org\seleniumhq\selenium\selenium-api\4.21.0\selenium-api-4.21.0.jar;C:\Users\HP\.m2\repository\org\seleniumhq\selenium\selenium-chrome-driver\4.21.0\selenium-chrome-driver-4.21.0.jar;C:\Users\HP\.m2\repository\com\google\auto\service\auto-service-annotations\1.1.1\auto-service-annotations-1.1.1.jar;C:\Users\HP\.m2\repository\org\seleniumhq\selenium\selenium-chromium-driver\4.21.0\selenium-chromium-driver-4.21.0.jar;C:\Users\HP\.m2\repository\org\seleniumhq\selenium\selenium-json\4.21.0\selenium-json-4.21.0.jar;C:\Users\HP\.m2\repository\org\seleniumhq\selenium\selenium-manager\4.21.0\selenium-manager-4.21.0.jar;C:\Users\HP\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v123\4.21.0\selenium-devtools-v123-4.21.0.jar;C:\Users\HP\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v124\4.21.0\selenium-devtools-v124-4.21.0.jar;C:\Users\HP\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v125\4.21.0\selenium-devtools-v125-4.21.0.jar;C:\Users\HP\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v85\4.21.0\selenium-devtools-v85-4.21.0.jar;C:\Users\HP\.m2\repository\org\seleniumhq\selenium\selenium-edge-driver\4.21.0\selenium-edge-driver-4.21.0.jar;C:\Users\HP\.m2\repository\org\seleniumhq\selenium\selenium-firefox-driver\4.21.0\selenium-firefox-driver-4.21.0.jar;C:\Users\HP\.m2\repository\org\seleniumhq\selenium\selenium-http\4.21.0\selenium-http-4.21.0.jar;C:\Users\HP\.m2\repository\dev\failsafe\failsafe\3.3.2\failsafe-3.3.2.jar;C:\Users\HP\.m2\repository\org\seleniumhq\selenium\selenium-ie-driver\4.21.0\selenium-ie-driver-4.21.0.jar;C:\Users\HP\.m2\repository\org\seleniumhq\selenium\selenium-remote-driver\4.21.0\selenium-remote-driver-4.21.0.jar;C:\Users\HP\.m2\repository\com\google\guava\guava\33.2.0-jre\guava-33.2.0-jre.jar;C:\Users\HP\.m2\repository\com\google\guava\failureaccess\1.0.2\failureaccess-1.0.2.jar;C:\Users\HP\.m2\repository\com\google\guava\listenablefuture\9999.0-empty-to-avoid-conflict-with-guava\listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar;C:\Users\HP\.m2\repository\com\google\code\findbugs\jsr305\3.0.2\jsr305-3.0.2.jar;C:\Users\HP\.m2\repository\org\checkerframework\checker-qual\3.42.0\checker-qual-3.42.0.jar;C:\Users\HP\.m2\repository\com\google\errorprone\error_prone_annotations\2.26.1\error_prone_annotations-2.26.1.jar;C:\Users\HP\.m2\repository\com\google\j2objc\j2objc-annotations\3.0.0\j2objc-annotations-3.0.0.jar;C:\Users\HP\.m2\repository\io\opentelemetry\semconv\opentelemetry-semconv\1.25.0-alpha\opentelemetry-semconv-1.25.0-alpha.jar;C:\Users\HP\.m2\repository\io\opentelemetry\opentelemetry-api\1.38.0\opentelemetry-api-1.38.0.jar;C:\Users\HP\.m2\repository\io\opentelemetry\opentelemetry-context\1.38.0\opentelemetry-context-1.38.0.jar;C:\Users\HP\.m2\repository\io\opentelemetry\opentelemetry-exporter-logging\1.38.0\opentelemetry-exporter-logging-1.38.0.jar;C:\Users\HP\.m2\repository\io\opentelemetry\opentelemetry-sdk-common\1.38.0\opentelemetry-sdk-common-1.38.0.jar;C:\Users\HP\.m2\repository\io\opentelemetry\opentelemetry-sdk-extension-autoconfigure-spi\1.38.0\opentelemetry-sdk-extension-autoconfigure-spi-1.38.0.jar;C:\Users\HP\.m2\repository\io\opentelemetry\opentelemetry-sdk-extension-autoconfigure\1.38.0\opentelemetry-sdk-extension-autoconfigure-1.38.0.jar;C:\Users\HP\.m2\repository\io\opentelemetry\opentelemetry-api-incubator\1.38.0-alpha\opentelemetry-api-incubator-1.38.0-alpha.jar;C:\Users\HP\.m2\repository\io\opentelemetry\opentelemetry-sdk-trace\1.38.0\opentelemetry-sdk-trace-1.38.0.jar;C:\Users\HP\.m2\repository\io\opentelemetry\opentelemetry-sdk\1.38.0\opentelemetry-sdk-1.38.0.jar;C:\Users\HP\.m2\repository\io\opentelemetry\opentelemetry-sdk-metrics\1.38.0\opentelemetry-sdk-metrics-1.38.0.jar;C:\Users\HP\.m2\repository\io\opentelemetry\opentelemetry-sdk-logs\1.38.0\opentelemetry-sdk-logs-1.38.0.jar;C:\Users\HP\.m2\repository\net\bytebuddy\byte-buddy\1.14.15\byte-buddy-1.14.15.jar;C:\Users\HP\.m2\repository\org\seleniumhq\selenium\selenium-os\4.21.0\selenium-os-4.21.0.jar;C:\Users\HP\.m2\repository\org\apache\commons\commons-exec\1.4.0\commons-exec-1.4.0.jar;C:\Users\HP\.m2\repository\org\seleniumhq\selenium\selenium-safari-driver\4.21.0\selenium-safari-driver-4.21.0.jar;C:\Users\HP\.m2\repository\org\seleniumhq\selenium\selenium-support\4.21.0\selenium-support-4.21.0.jar;C:\Users\HP\.m2\repository\io\cucumber\cucumber-java\7.14.0\cucumber-java-7.14.0.jar;C:\Users\HP\.m2\repository\io\cucumber\cucumber-core\7.14.0\cucumber-core-7.14.0.jar;C:\Users\HP\.m2\repository\io\cucumber\cucumber-gherkin\7.14.0\cucumber-gherkin-7.14.0.jar;C:\Users\HP\.m2\repository\io\cucumber\cucumber-gherkin-messages\7.14.0\cucumber-gherkin-messages-7.14.0.jar;C:\Users\HP\.m2\repository\io\cucumber\gherkin\26.2.0\gherkin-26.2.0.jar;C:\Users\HP\.m2\repository\io\cucumber\messages\22.0.0\messages-22.0.0.jar;C:\Users\HP\.m2\repository\io\cucumber\tag-expressions\5.0.6\tag-expressions-5.0.6.jar;C:\Users\HP\.m2\repository\io\cucumber\cucumber-expressions\16.1.2\cucumber-expressions-16.1.2.jar;C:\Users\HP\.m2\repository\io\cucumber\datatable\7.14.0\datatable-7.14.0.jar;C:\Users\HP\.m2\repository\io\cucumber\cucumber-plugin\7.14.0\cucumber-plugin-7.14.0.jar;C:\Users\HP\.m2\repository\io\cucumber\docstring\7.14.0\docstring-7.14.0.jar;C:\Users\HP\.m2\repository\io\cucumber\html-formatter\20.4.0\html-formatter-20.4.0.jar;C:\Users\HP\.m2\repository\io\cucumber\junit-xml-formatter\0.2.0\junit-xml-formatter-0.2.0.jar;C:\Users\HP\.m2\repository\io\cucumber\ci-environment\9.2.0\ci-environment-9.2.0.jar;C:\Users\HP\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\HP\.m2\repository\io\cucumber\cucumber-junit\7.14.0\cucumber-junit-7.14.0.jar;C:\Users\HP\.m2\repository\junit\junit\4.13.2\junit-4.13.2.jar;C:\Users\HP\.m2\repository\io\github\bonigarcia\webdrivermanager\5.8.0\webdrivermanager-5.8.0.jar;C:\Users\HP\.m2\repository\org\slf4j\slf4j-api\2.0.12\slf4j-api-2.0.12.jar;C:\Users\HP\.m2\repository\com\google\code\gson\gson\2.10.1\gson-2.10.1.jar;C:\Users\HP\.m2\repository\com\github\docker-java\docker-java\3.3.6\docker-java-3.3.6.jar;C:\Users\HP\.m2\repository\com\github\docker-java\docker-java-core\3.3.6\docker-java-core-3.3.6.jar;C:\Users\HP\.m2\repository\com\github\docker-java\docker-java-api\3.3.6\docker-java-api-3.3.6.jar;C:\Users\HP\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.10.3\jackson-annotations-2.10.3.jar;C:\Users\HP\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.10.3\jackson-databind-2.10.3.jar;C:\Users\HP\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.10.3\jackson-core-2.10.3.jar;C:\Users\HP\.m2\repository\org\bouncycastle\bcpkix-jdk18on\1.76\bcpkix-jdk18on-1.76.jar;C:\Users\HP\.m2\repository\org\bouncycastle\bcprov-jdk18on\1.76\bcprov-jdk18on-1.76.jar;C:\Users\HP\.m2\repository\org\bouncycastle\bcutil-jdk18on\1.76\bcutil-jdk18on-1.76.jar;C:\Users\HP\.m2\repository\org\slf4j\jcl-over-slf4j\1.7.30\jcl-over-slf4j-1.7.30.jar;C:\Users\HP\.m2\repository\com\github\docker-java\docker-java-transport-httpclient5\3.3.6\docker-java-transport-httpclient5-3.3.6.jar;C:\Users\HP\.m2\repository\com\github\docker-java\docker-java-transport\3.3.6\docker-java-transport-3.3.6.jar;C:\Users\HP\.m2\repository\net\java\dev\jna\jna\5.13.0\jna-5.13.0.jar;C:\Users\HP\.m2\repository\org\brotli\dec\0.1.2\dec-0.1.2.jar;C:\Users\HP\.m2\repository\org\apache\commons\commons-lang3\3.14.0\commons-lang3-3.14.0.jar;C:\Users\HP\.m2\repository\org\apache\commons\commons-compress\1.26.1\commons-compress-1.26.1.jar;C:\Users\HP\.m2\repository\commons-codec\commons-codec\1.16.1\commons-codec-1.16.1.jar;C:\Users\HP\.m2\repository\commons-io\commons-io\2.15.1\commons-io-2.15.1.jar;C:\Users\HP\.m2\repository\org\apache\httpcomponents\client5\httpclient5\5.2.1\httpclient5-5.2.1.jar;C:\Users\HP\.m2\repository\org\apache\httpcomponents\core5\httpcore5\5.2\httpcore5-5.2.jar;C:\Users\HP\.m2\repository\org\apache\httpcomponents\core5\httpcore5-h2\5.2\httpcore5-h2-5.2.jar;C:\Users\HP\.m2\repository\org\hamcrest\hamcrest\2.2\hamcrest-2.2.jar;C:\Users\HP\.m2\repository\org\hamcrest\hamcrest-library\2.2\hamcrest-library-2.2.jar;C:\Users\HP\.m2\repository\org\hamcrest\hamcrest-core\2.2\hamcrest-core-2.2.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -30,7 +30,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\HP\AppData\Local\Temp\surefire9970716462750380790\surefirebooter-20250622013941125_3.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\HP\AppData\Local\Temp\surefire9287133699342530164\surefirebooter-20250622201148694_3.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="21.0.7+6-LTS"/>
@@ -40,6 +40,7 @@
     <property name="os.version" value="10.0"/>
     <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
     <property name="file.encoding" value="UTF-8"/>
+    <property name="browser" value="firefox"/>
     <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
     <property name="java.vendor.version" value="Temurin-21.0.7+6"/>
     <property name="localRepository" value="C:\Users\HP\.m2\repository"/>
@@ -59,20 +60,203 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="65.0"/>
   </properties>
-  <testcase name="Validate search functionality by not providing any input and navigations of page" classname="NHS Job Search functionality." time="7.908">
+  <testcase name="Validate search functionality by providing only-Job Location #1" classname="NHS Job Search functionality." time="8.216">
     <system-out><![CDATA[
-Scenario: Validate search functionality by not providing any input and navigations of page &amp#27;[90m# src/test/java/features/searchPage.feature:35&amp#27;[0m
+Scenario Outline: Validate search functionality by providing only-Job Location      &amp#27;[90m# src/test/java/features/searchPage.feature:13&amp#27;[0m
+  &amp#27;[32mGiven &amp#27;[0m&amp#27;[32muser is on the NHS job search page with title &amp#27;[0m&amp#27;[32m&amp#27;[1m"Search for jobs in the NHS"&amp#27;[0m  &amp#27;[90m# stepDefinitions.searchFunctionality.user_is_on_the_nhs_job_search_page_with_title(java.lang.String)&amp#27;[0m
+  &amp#27;[32mWhen &amp#27;[0m&amp#27;[32muser enter partial location &amp#27;[0m&amp#27;[32m&amp#27;[1m"Liver"&amp#27;[0m&amp#27;[32m and selects &amp#27;[0m&amp#27;[32m&amp#27;[1m"Liverpool"&amp#27;[0m&amp#27;[32m from suggestions&amp#27;[0m &amp#27;[90m# stepDefinitions.searchFunctionality.user_enter_partial_location_and_selects_from_suggestions(java.lang.String,java.lang.String)&amp#27;[0m
+  &amp#27;[32mAnd &amp#27;[0m&amp#27;[32muser clicks on search button&amp#27;[0m                                                  &amp#27;[90m# stepDefinitions.searchFunctionality.user_clicks_on_search_button()&amp#27;[0m
+  &amp#27;[32mAnd &amp#27;[0m&amp#27;[32muser sorts results by &amp#27;[0m&amp#27;[32m&amp#27;[1m"Date Posted (newest)"&amp#27;[0m                                  &amp#27;[90m# stepDefinitions.searchFunctionality.user_sorts_results_by_newest_date(java.lang.String)&amp#27;[0m
+  &amp#27;[32mThen &amp#27;[0m&amp#27;[32muser should be able to view the results with the most recent date posted&amp#27;[0m     &amp#27;[90m# stepDefinitions.searchFunctionality.user_should_be_able_to_view_the_results_with_the_most_recent_date_posted()&amp#27;[0m
+  &amp#27;[32mThen &amp#27;[0m&amp#27;[32mthe message should contain &amp#27;[0m&amp#27;[32m&amp#27;[1m"Liverpool"&amp#27;[0m                                       &amp#27;[90m# stepDefinitions.searchFunctionality.the_message_should_contain(java.lang.String)&amp#27;[0m
+]]></system-out>
+    <system-err><![CDATA[SLF4J(W): No SLF4J providers were found.
+SLF4J(W): Defaulting to no-operation (NOP) logger implementation
+SLF4J(W): See https://www.slf4j.org/codes.html#noProviders for further details.
+Jun 22, 2025 8:11:54 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 136
+Jun 22, 2025 8:11:54 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+WARNING: Unable to find version of CDP to use for 136.0.7103.114. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.21.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+]]></system-err>
+  </testcase>
+  <testcase name="Validate search functionality by providing only-Job Location #2" classname="NHS Job Search functionality." time="6.573">
+    <system-out><![CDATA[
+Scenario Outline: Validate search functionality by providing only-Job Location     &amp#27;[90m# src/test/java/features/searchPage.feature:14&amp#27;[0m
+  &amp#27;[32mGiven &amp#27;[0m&amp#27;[32muser is on the NHS job search page with title &amp#27;[0m&amp#27;[32m&amp#27;[1m"Search for jobs in the NHS"&amp#27;[0m &amp#27;[90m# stepDefinitions.searchFunctionality.user_is_on_the_nhs_job_search_page_with_title(java.lang.String)&amp#27;[0m
+  &amp#27;[32mWhen &amp#27;[0m&amp#27;[32muser enter partial location &amp#27;[0m&amp#27;[32m&amp#27;[1m"Man"&amp#27;[0m&amp#27;[32m and selects &amp#27;[0m&amp#27;[32m&amp#27;[1m"Manchester"&amp#27;[0m&amp#27;[32m from suggestions&amp#27;[0m &amp#27;[90m# stepDefinitions.searchFunctionality.user_enter_partial_location_and_selects_from_suggestions(java.lang.String,java.lang.String)&amp#27;[0m
+  &amp#27;[32mAnd &amp#27;[0m&amp#27;[32muser clicks on search button&amp#27;[0m                                                 &amp#27;[90m# stepDefinitions.searchFunctionality.user_clicks_on_search_button()&amp#27;[0m
+  &amp#27;[32mAnd &amp#27;[0m&amp#27;[32muser sorts results by &amp#27;[0m&amp#27;[32m&amp#27;[1m"Date Posted (newest)"&amp#27;[0m                                 &amp#27;[90m# stepDefinitions.searchFunctionality.user_sorts_results_by_newest_date(java.lang.String)&amp#27;[0m
+  &amp#27;[32mThen &amp#27;[0m&amp#27;[32muser should be able to view the results with the most recent date posted&amp#27;[0m    &amp#27;[90m# stepDefinitions.searchFunctionality.user_should_be_able_to_view_the_results_with_the_most_recent_date_posted()&amp#27;[0m
+  &amp#27;[32mThen &amp#27;[0m&amp#27;[32mthe message should contain &amp#27;[0m&amp#27;[32m&amp#27;[1m"Manchester"&amp#27;[0m                                     &amp#27;[90m# stepDefinitions.searchFunctionality.the_message_should_contain(java.lang.String)&amp#27;[0m
+]]></system-out>
+    <system-err><![CDATA[Jun 22, 2025 8:12:01 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 136
+Jun 22, 2025 8:12:01 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+WARNING: Unable to find version of CDP to use for 136.0.7103.114. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.21.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+]]></system-err>
+  </testcase>
+  <testcase name="Validate Searchfunctionality by providing only-Job Title #1" classname="NHS Job Search functionality." time="5.463">
+    <system-out><![CDATA[
+Scenario Outline: Validate Searchfunctionality by providing only-Job Title         &amp#27;[90m# src/test/java/features/searchPage.feature:24&amp#27;[0m
+  &amp#27;[32mGiven &amp#27;[0m&amp#27;[32muser is on the NHS job search page with title &amp#27;[0m&amp#27;[32m&amp#27;[1m"Search for jobs in the NHS"&amp#27;[0m &amp#27;[90m# stepDefinitions.searchFunctionality.user_is_on_the_nhs_job_search_page_with_title(java.lang.String)&amp#27;[0m
+  &amp#27;[32mWhen &amp#27;[0m&amp#27;[32muser enters job title &amp#27;[0m&amp#27;[32m&amp#27;[1m"Cardiac Physiologist"&amp#27;[0m                                &amp#27;[90m# stepDefinitions.searchFunctionality.user_enters_job_title(java.lang.String)&amp#27;[0m
+  &amp#27;[32mAnd &amp#27;[0m&amp#27;[32muser clicks on search button&amp#27;[0m                                                 &amp#27;[90m# stepDefinitions.searchFunctionality.user_clicks_on_search_button()&amp#27;[0m
+  &amp#27;[32mAnd &amp#27;[0m&amp#27;[32muser sorts results by &amp#27;[0m&amp#27;[32m&amp#27;[1m"Date Posted (newest)"&amp#27;[0m                                 &amp#27;[90m# stepDefinitions.searchFunctionality.user_sorts_results_by_newest_date(java.lang.String)&amp#27;[0m
+  &amp#27;[32mThen &amp#27;[0m&amp#27;[32muser should be able to view the results with the most recent date posted&amp#27;[0m    &amp#27;[90m# stepDefinitions.searchFunctionality.user_should_be_able_to_view_the_results_with_the_most_recent_date_posted()&amp#27;[0m
+  &amp#27;[32mThen &amp#27;[0m&amp#27;[32mthe message should contain &amp#27;[0m&amp#27;[32m&amp#27;[1m"Cardiac Physiologist"&amp#27;[0m                           &amp#27;[90m# stepDefinitions.searchFunctionality.the_message_should_contain(java.lang.String)&amp#27;[0m
+]]></system-out>
+    <system-err><![CDATA[Jun 22, 2025 8:12:07 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 136
+Jun 22, 2025 8:12:07 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+WARNING: Unable to find version of CDP to use for 136.0.7103.114. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.21.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+]]></system-err>
+  </testcase>
+  <testcase name="Validate Searchfunctionality by providing only-Job Title #2" classname="NHS Job Search functionality." time="4.837">
+    <system-out><![CDATA[
+Scenario Outline: Validate Searchfunctionality by providing only-Job Title         &amp#27;[90m# src/test/java/features/searchPage.feature:25&amp#27;[0m
+  &amp#27;[32mGiven &amp#27;[0m&amp#27;[32muser is on the NHS job search page with title &amp#27;[0m&amp#27;[32m&amp#27;[1m"Search for jobs in the NHS"&amp#27;[0m &amp#27;[90m# stepDefinitions.searchFunctionality.user_is_on_the_nhs_job_search_page_with_title(java.lang.String)&amp#27;[0m
+  &amp#27;[32mWhen &amp#27;[0m&amp#27;[32muser enters job title &amp#27;[0m&amp#27;[32m&amp#27;[1m"Automation Tester"&amp#27;[0m                                   &amp#27;[90m# stepDefinitions.searchFunctionality.user_enters_job_title(java.lang.String)&amp#27;[0m
+  &amp#27;[32mAnd &amp#27;[0m&amp#27;[32muser clicks on search button&amp#27;[0m                                                 &amp#27;[90m# stepDefinitions.searchFunctionality.user_clicks_on_search_button()&amp#27;[0m
+  &amp#27;[32mAnd &amp#27;[0m&amp#27;[32muser sorts results by &amp#27;[0m&amp#27;[32m&amp#27;[1m"Date Posted (newest)"&amp#27;[0m                                 &amp#27;[90m# stepDefinitions.searchFunctionality.user_sorts_results_by_newest_date(java.lang.String)&amp#27;[0m
+  &amp#27;[32mThen &amp#27;[0m&amp#27;[32muser should be able to view the results with the most recent date posted&amp#27;[0m    &amp#27;[90m# stepDefinitions.searchFunctionality.user_should_be_able_to_view_the_results_with_the_most_recent_date_posted()&amp#27;[0m
+  &amp#27;[32mThen &amp#27;[0m&amp#27;[32mthe message should contain &amp#27;[0m&amp#27;[32m&amp#27;[1m"Automation Tester"&amp#27;[0m                              &amp#27;[90m# stepDefinitions.searchFunctionality.the_message_should_contain(java.lang.String)&amp#27;[0m
+]]></system-out>
+    <system-err><![CDATA[Jun 22, 2025 8:12:12 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 136
+Jun 22, 2025 8:12:12 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+WARNING: Unable to find version of CDP to use for 136.0.7103.114. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.21.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+]]></system-err>
+  </testcase>
+  <testcase name="Validate clearFilters button functionality" classname="NHS Job Search functionality." time="4.146">
+    <system-out><![CDATA[
+Scenario: Validate clearFilters button functionality                               &amp#27;[90m# src/test/java/features/searchPage.feature:27&amp#27;[0m
+  &amp#27;[32mGiven &amp#27;[0m&amp#27;[32muser is on the NHS job search page with title &amp#27;[0m&amp#27;[32m&amp#27;[1m"Search for jobs in the NHS"&amp#27;[0m &amp#27;[90m# stepDefinitions.searchFunctionality.user_is_on_the_nhs_job_search_page_with_title(java.lang.String)&amp#27;[0m
+  &amp#27;[32mWhen &amp#27;[0m&amp#27;[32muser enters job title &amp#27;[0m&amp#27;[32m&amp#27;[1m"Healthcare Assistant"&amp#27;[0m&amp#27;[32m and location &amp#27;[0m&amp#27;[32m&amp#27;[1m"Manchester"&amp#27;[0m      &amp#27;[90m# stepDefinitions.searchFunctionality.user_enters_job_title_and_location(java.lang.String,java.lang.String)&amp#27;[0m
+  &amp#27;[32mAnd &amp#27;[0m&amp#27;[32muser clicks on clear filter button&amp#27;[0m                                           &amp#27;[90m# stepDefinitions.searchFunctionality.user_clicks_on_clear_filter_button()&amp#27;[0m
+  &amp#27;[32mThen &amp#27;[0m&amp#27;[32mjob title and location fields should be blank&amp#27;[0m                               &amp#27;[90m# stepDefinitions.searchFunctionality.job_title_and_location_fields_should_be_blank()&amp#27;[0m
+]]></system-out>
+    <system-err><![CDATA[Jun 22, 2025 8:12:17 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 136
+Jun 22, 2025 8:12:17 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+WARNING: Unable to find version of CDP to use for 136.0.7103.114. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.21.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+]]></system-err>
+  </testcase>
+  <testcase name="Validate search functionality by providing valid - Job title/skill and Location #1" classname="NHS Job Search functionality." time="5.266">
+    <system-out><![CDATA[
+Scenario Outline: Validate search functionality by providing valid - Job title/skill and Location &amp#27;[90m# src/test/java/features/searchPage.feature:39&amp#27;[0m
+  &amp#27;[32mGiven &amp#27;[0m&amp#27;[32muser is on the NHS job search page with title &amp#27;[0m&amp#27;[32m&amp#27;[1m"Search for jobs in the NHS"&amp#27;[0m                &amp#27;[90m# stepDefinitions.searchFunctionality.user_is_on_the_nhs_job_search_page_with_title(java.lang.String)&amp#27;[0m
+  &amp#27;[32mWhen &amp#27;[0m&amp#27;[32muser enters job title &amp#27;[0m&amp#27;[32m&amp#27;[1m"Staff Nurse"&amp#27;[0m&amp#27;[32m and location &amp#27;[0m&amp#27;[32m&amp#27;[1m"London"&amp#27;[0m                                  &amp#27;[90m# stepDefinitions.searchFunctionality.user_enters_job_title_and_location(java.lang.String,java.lang.String)&amp#27;[0m
+  &amp#27;[32mAnd &amp#27;[0m&amp#27;[32muser clicks on search button&amp#27;[0m                                                                &amp#27;[90m# stepDefinitions.searchFunctionality.user_clicks_on_search_button()&amp#27;[0m
+  &amp#27;[32mAnd &amp#27;[0m&amp#27;[32muser sorts results by &amp#27;[0m&amp#27;[32m&amp#27;[1m"Date Posted (newest)"&amp#27;[0m                                                &amp#27;[90m# stepDefinitions.searchFunctionality.user_sorts_results_by_newest_date(java.lang.String)&amp#27;[0m
+  &amp#27;[32mThen &amp#27;[0m&amp#27;[32muser should be able to view the results with the most recent date posted&amp#27;[0m                   &amp#27;[90m# stepDefinitions.searchFunctionality.user_should_be_able_to_view_the_results_with_the_most_recent_date_posted()&amp#27;[0m
+]]></system-out>
+    <system-err><![CDATA[Jun 22, 2025 8:12:21 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 136
+Jun 22, 2025 8:12:21 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+WARNING: Unable to find version of CDP to use for 136.0.7103.114. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.21.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+]]></system-err>
+  </testcase>
+  <testcase name="Validate search functionality by providing valid - Job title/skill and Location #2" classname="NHS Job Search functionality." time="5.626">
+    <system-out><![CDATA[
+Scenario Outline: Validate search functionality by providing valid - Job title/skill and Location &amp#27;[90m# src/test/java/features/searchPage.feature:40&amp#27;[0m
+  &amp#27;[32mGiven &amp#27;[0m&amp#27;[32muser is on the NHS job search page with title &amp#27;[0m&amp#27;[32m&amp#27;[1m"Search for jobs in the NHS"&amp#27;[0m                &amp#27;[90m# stepDefinitions.searchFunctionality.user_is_on_the_nhs_job_search_page_with_title(java.lang.String)&amp#27;[0m
+  &amp#27;[32mWhen &amp#27;[0m&amp#27;[32muser enters job title &amp#27;[0m&amp#27;[32m&amp#27;[1m"Cardiac Physiologist"&amp#27;[0m&amp#27;[32m and location &amp#27;[0m&amp#27;[32m&amp#27;[1m"L15 3HP"&amp#27;[0m                        &amp#27;[90m# stepDefinitions.searchFunctionality.user_enters_job_title_and_location(java.lang.String,java.lang.String)&amp#27;[0m
+  &amp#27;[32mAnd &amp#27;[0m&amp#27;[32muser clicks on search button&amp#27;[0m                                                                &amp#27;[90m# stepDefinitions.searchFunctionality.user_clicks_on_search_button()&amp#27;[0m
+  &amp#27;[32mAnd &amp#27;[0m&amp#27;[32muser sorts results by &amp#27;[0m&amp#27;[32m&amp#27;[1m"Date Posted (newest)"&amp#27;[0m                                                &amp#27;[90m# stepDefinitions.searchFunctionality.user_sorts_results_by_newest_date(java.lang.String)&amp#27;[0m
+  &amp#27;[32mThen &amp#27;[0m&amp#27;[32muser should be able to view the results with the most recent date posted&amp#27;[0m                   &amp#27;[90m# stepDefinitions.searchFunctionality.user_should_be_able_to_view_the_results_with_the_most_recent_date_posted()&amp#27;[0m
+]]></system-out>
+    <system-err><![CDATA[Jun 22, 2025 8:12:27 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 136
+Jun 22, 2025 8:12:27 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+WARNING: Unable to find version of CDP to use for 136.0.7103.114. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.21.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+]]></system-err>
+  </testcase>
+  <testcase name="Validate search functionality by providing valid - Job title/skill and Location #3" classname="NHS Job Search functionality." time="5.03">
+    <system-out><![CDATA[
+Scenario Outline: Validate search functionality by providing valid - Job title/skill and Location &amp#27;[90m# src/test/java/features/searchPage.feature:41&amp#27;[0m
+  &amp#27;[32mGiven &amp#27;[0m&amp#27;[32muser is on the NHS job search page with title &amp#27;[0m&amp#27;[32m&amp#27;[1m"Search for jobs in the NHS"&amp#27;[0m                &amp#27;[90m# stepDefinitions.searchFunctionality.user_is_on_the_nhs_job_search_page_with_title(java.lang.String)&amp#27;[0m
+  &amp#27;[32mWhen &amp#27;[0m&amp#27;[32muser enters job title &amp#27;[0m&amp#27;[32m&amp#27;[1m"Practice Nurse"&amp#27;[0m&amp#27;[32m and location &amp#27;[0m&amp#27;[32m&amp#27;[1m"Manchester"&amp#27;[0m                           &amp#27;[90m# stepDefinitions.searchFunctionality.user_enters_job_title_and_location(java.lang.String,java.lang.String)&amp#27;[0m
+  &amp#27;[32mAnd &amp#27;[0m&amp#27;[32muser clicks on search button&amp#27;[0m                                                                &amp#27;[90m# stepDefinitions.searchFunctionality.user_clicks_on_search_button()&amp#27;[0m
+  &amp#27;[32mAnd &amp#27;[0m&amp#27;[32muser sorts results by &amp#27;[0m&amp#27;[32m&amp#27;[1m"Date Posted (newest)"&amp#27;[0m                                                &amp#27;[90m# stepDefinitions.searchFunctionality.user_sorts_results_by_newest_date(java.lang.String)&amp#27;[0m
+  &amp#27;[32mThen &amp#27;[0m&amp#27;[32muser should be able to view the results with the most recent date posted&amp#27;[0m                   &amp#27;[90m# stepDefinitions.searchFunctionality.user_should_be_able_to_view_the_results_with_the_most_recent_date_posted()&amp#27;[0m
+]]></system-out>
+    <system-err><![CDATA[Jun 22, 2025 8:12:32 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 136
+Jun 22, 2025 8:12:32 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+WARNING: Unable to find version of CDP to use for 136.0.7103.114. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.21.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+]]></system-err>
+  </testcase>
+  <testcase name="Validate search functionality by not providing any input and navigations of page" classname="NHS Job Search functionality." time="5.07">
+    <system-out><![CDATA[
+Scenario: Validate search functionality by not providing any input and navigations of page &amp#27;[90m# src/test/java/features/searchPage.feature:43&amp#27;[0m
   &amp#27;[32mGiven &amp#27;[0m&amp#27;[32muser is on the NHS job search page with title &amp#27;[0m&amp#27;[32m&amp#27;[1m"Search for jobs in the NHS"&amp#27;[0m         &amp#27;[90m# stepDefinitions.searchFunctionality.user_is_on_the_nhs_job_search_page_with_title(java.lang.String)&amp#27;[0m
   &amp#27;[32mWhen &amp#27;[0m&amp#27;[32muser clicks on search button&amp#27;[0m                                                        &amp#27;[90m# stepDefinitions.searchFunctionality.user_clicks_on_search_button()&amp#27;[0m
   &amp#27;[32mThen &amp#27;[0m&amp#27;[32mjob results should be listed with the message contains &amp#27;[0m&amp#27;[32m&amp#27;[1m"jobs found"&amp#27;[0m                 &amp#27;[90m# stepDefinitions.searchFunctionality.results_should_able_to_view_the_jobs_listed_with_the_message_contains(java.lang.String)&amp#27;[0m
   &amp#27;[32mAnd &amp#27;[0m&amp#27;[32muser should be able to click on Next page and Previous page buttons&amp#27;[0m                  &amp#27;[90m# stepDefinitions.searchFunctionality.user_should_be_able_to_click_on_next_page_and_previous_page_buttons()&amp#27;[0m
 ]]></system-out>
-    <system-err><![CDATA[SLF4J(W): No SLF4J providers were found.
-SLF4J(W): Defaulting to no-operation (NOP) logger implementation
-SLF4J(W): See https://www.slf4j.org/codes.html#noProviders for further details.
-Jun 22, 2025 1:39:47 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+    <system-err><![CDATA[Jun 22, 2025 8:12:37 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 WARNING: Unable to find CDP implementation matching 136
-Jun 22, 2025 1:39:47 AM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+Jun 22, 2025 8:12:37 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+WARNING: Unable to find version of CDP to use for 136.0.7103.114. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.21.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+]]></system-err>
+  </testcase>
+  <testcase name="Validate Searchfunctionality by providing all fields" classname="NHS Job Search functionality." time="5.414">
+    <system-out><![CDATA[
+Scenario: Validate Searchfunctionality by providing all fields                                        &amp#27;[90m# src/test/java/features/searchPage.feature:48&amp#27;[0m
+  &amp#27;[32mGiven &amp#27;[0m&amp#27;[32muser is on the NHS job search page with title &amp#27;[0m&amp#27;[32m&amp#27;[1m"Search for jobs in the NHS"&amp#27;[0m                    &amp#27;[90m# stepDefinitions.searchFunctionality.user_is_on_the_nhs_job_search_page_with_title(java.lang.String)&amp#27;[0m
+  &amp#27;[32mWhen &amp#27;[0m&amp#27;[32muser enters job title &amp#27;[0m&amp#27;[32m&amp#27;[1m"Staff Nurse"&amp#27;[0m&amp#27;[32m and location &amp#27;[0m&amp#27;[32m&amp#27;[1m"London"&amp#27;[0m                                      &amp#27;[90m# stepDefinitions.searchFunctionality.user_enters_job_title_and_location(java.lang.String,java.lang.String)&amp#27;[0m
+  &amp#27;[32mAnd &amp#27;[0m&amp#27;[32muser selects the distance &amp#27;[0m&amp#27;[32m&amp#27;[1m"+10 Miles"&amp#27;[0m                                                           &amp#27;[90m# stepDefinitions.searchFunctionality.user_selects_the_distance(java.lang.String)&amp#27;[0m
+  &amp#27;[32mAnd &amp#27;[0m&amp#27;[32muser clicks on More Search options link to expand search&amp#27;[0m                                        &amp#27;[90m# stepDefinitions.searchFunctionality.user_clicks_on_more_search_options_link_to_expand_search()&amp#27;[0m
+  &amp#27;[32mAnd &amp#27;[0m&amp#27;[32muser enters job reference &amp#27;[0m&amp#27;[32m&amp#27;[1m"1316185502"&amp#27;[0m&amp#27;[32m Employer &amp#27;[0m&amp#27;[32m&amp#27;[1m"Healthcare"&amp#27;[0m&amp#27;[32m and Pay Range &amp#27;[0m&amp#27;[32m&amp#27;[1m"£10,000 to £20,000"&amp#27;[0m &amp#27;[90m# stepDefinitions.searchFunctionality.user_enters_job_reference_employer_and_pay_range(java.lang.String,java.lang.String,java.lang.String)&amp#27;[0m
+  &amp#27;[32mAnd &amp#27;[0m&amp#27;[32muser clicks on search button&amp#27;[0m                                                                    &amp#27;[90m# stepDefinitions.searchFunctionality.user_clicks_on_search_button()&amp#27;[0m
+  &amp#27;[32mAnd &amp#27;[0m&amp#27;[32muser sorts results by &amp#27;[0m&amp#27;[32m&amp#27;[1m"Date Posted (newest)"&amp#27;[0m                                                    &amp#27;[90m# stepDefinitions.searchFunctionality.user_sorts_results_by_newest_date(java.lang.String)&amp#27;[0m
+  &amp#27;[32mThen &amp#27;[0m&amp#27;[32muser should be able to view the results with the most recent date posted&amp#27;[0m                       &amp#27;[90m# stepDefinitions.searchFunctionality.user_should_be_able_to_view_the_results_with_the_most_recent_date_posted()&amp#27;[0m
+]]></system-out>
+    <system-err><![CDATA[Jun 22, 2025 8:12:42 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 136
+Jun 22, 2025 8:12:42 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+WARNING: Unable to find version of CDP to use for 136.0.7103.114. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.21.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+]]></system-err>
+  </testcase>
+  <testcase name="Validate Searchfunctionality by providing special characters in Job Title field #1" classname="NHS Job Search functionality." time="3.503">
+    <system-out><![CDATA[
+Scenario Outline: Validate Searchfunctionality by providing special characters in Job Title field &amp#27;[90m# src/test/java/features/searchPage.feature:63&amp#27;[0m
+  &amp#27;[32mGiven &amp#27;[0m&amp#27;[32muser is on the NHS job search page with title &amp#27;[0m&amp#27;[32m&amp#27;[1m"Search for jobs in the NHS"&amp#27;[0m                &amp#27;[90m# stepDefinitions.searchFunctionality.user_is_on_the_nhs_job_search_page_with_title(java.lang.String)&amp#27;[0m
+  &amp#27;[32mWhen &amp#27;[0m&amp#27;[32muser enters job title &amp#27;[0m&amp#27;[32m&amp#27;[1m"@$$$$@"&amp#27;[0m                                                             &amp#27;[90m# stepDefinitions.searchFunctionality.user_enters_job_title(java.lang.String)&amp#27;[0m
+  &amp#27;[32mAnd &amp#27;[0m&amp#27;[32muser clicks on search button&amp#27;[0m                                                                &amp#27;[90m# stepDefinitions.searchFunctionality.user_clicks_on_search_button()&amp#27;[0m
+  &amp#27;[32mThen &amp#27;[0m&amp#27;[32mthe message should contain &amp#27;[0m&amp#27;[32m&amp#27;[1m"No result found for @$$$$@"&amp#27;[0m                                    &amp#27;[90m# stepDefinitions.searchFunctionality.the_message_should_contain(java.lang.String)&amp#27;[0m
+]]></system-out>
+    <system-err><![CDATA[Jun 22, 2025 8:12:48 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 136
+Jun 22, 2025 8:12:48 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+WARNING: Unable to find version of CDP to use for 136.0.7103.114. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.21.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+]]></system-err>
+  </testcase>
+  <testcase name="Validate Searchfunctionality by providing special characters in Job Title field #2" classname="NHS Job Search functionality." time="3.84">
+    <system-out><![CDATA[
+Scenario Outline: Validate Searchfunctionality by providing special characters in Job Title field &amp#27;[90m# src/test/java/features/searchPage.feature:64&amp#27;[0m
+  &amp#27;[32mGiven &amp#27;[0m&amp#27;[32muser is on the NHS job search page with title &amp#27;[0m&amp#27;[32m&amp#27;[1m"Search for jobs in the NHS"&amp#27;[0m                &amp#27;[90m# stepDefinitions.searchFunctionality.user_is_on_the_nhs_job_search_page_with_title(java.lang.String)&amp#27;[0m
+  &amp#27;[32mWhen &amp#27;[0m&amp#27;[32muser enters job title &amp#27;[0m&amp#27;[32m&amp#27;[1m"###@@!!"&amp#27;[0m                                                            &amp#27;[90m# stepDefinitions.searchFunctionality.user_enters_job_title(java.lang.String)&amp#27;[0m
+  &amp#27;[32mAnd &amp#27;[0m&amp#27;[32muser clicks on search button&amp#27;[0m                                                                &amp#27;[90m# stepDefinitions.searchFunctionality.user_clicks_on_search_button()&amp#27;[0m
+  &amp#27;[32mThen &amp#27;[0m&amp#27;[32mthe message should contain &amp#27;[0m&amp#27;[32m&amp#27;[1m"No result found for ###@@!!"&amp#27;[0m                                   &amp#27;[90m# stepDefinitions.searchFunctionality.the_message_should_contain(java.lang.String)&amp#27;[0m
+]]></system-out>
+    <system-err><![CDATA[Jun 22, 2025 8:12:51 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 136
+Jun 22, 2025 8:12:51 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+WARNING: Unable to find version of CDP to use for 136.0.7103.114. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.21.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
+]]></system-err>
+  </testcase>
+  <testcase name="Validate Searchfunctionality by providing special characters in Job Title field #3" classname="NHS Job Search functionality." time="3.669">
+    <system-out><![CDATA[
+Scenario Outline: Validate Searchfunctionality by providing special characters in Job Title field &amp#27;[90m# src/test/java/features/searchPage.feature:65&amp#27;[0m
+  &amp#27;[32mGiven &amp#27;[0m&amp#27;[32muser is on the NHS job search page with title &amp#27;[0m&amp#27;[32m&amp#27;[1m"Search for jobs in the NHS"&amp#27;[0m                &amp#27;[90m# stepDefinitions.searchFunctionality.user_is_on_the_nhs_job_search_page_with_title(java.lang.String)&amp#27;[0m
+  &amp#27;[32mWhen &amp#27;[0m&amp#27;[32muser enters job title &amp#27;[0m&amp#27;[32m&amp#27;[1m"***"&amp#27;[0m                                                                &amp#27;[90m# stepDefinitions.searchFunctionality.user_enters_job_title(java.lang.String)&amp#27;[0m
+  &amp#27;[32mAnd &amp#27;[0m&amp#27;[32muser clicks on search button&amp#27;[0m                                                                &amp#27;[90m# stepDefinitions.searchFunctionality.user_clicks_on_search_button()&amp#27;[0m
+  &amp#27;[32mThen &amp#27;[0m&amp#27;[32mthe message should contain &amp#27;[0m&amp#27;[32m&amp#27;[1m"No result found for ***"&amp#27;[0m                                       &amp#27;[90m# stepDefinitions.searchFunctionality.the_message_should_contain(java.lang.String)&amp#27;[0m
+]]></system-out>
+    <system-err><![CDATA[Jun 22, 2025 8:12:55 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 136
+Jun 22, 2025 8:12:55 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
 WARNING: Unable to find version of CDP to use for 136.0.7103.114. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.21.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
 ]]></system-err>
   </testcase>

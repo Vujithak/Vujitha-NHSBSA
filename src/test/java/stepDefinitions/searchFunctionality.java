@@ -33,8 +33,25 @@ public void user_enters_job_title(String jobtitle) {
 }
 @When("user enters job title {string} and location {string}")
 public void user_enters_job_title_and_location(String jobTitle, String jobLocation) {
-    sp.enterJobTitle(jobLocation);
+    sp.enterJobTitle(jobTitle);
     sp.enterJobLocation(jobLocation);
+}
+
+@And("user selects the distance {string}")
+public void user_selects_the_distance(String distance) {
+    sp.selectDistance(distance);
+}
+
+@And("user clicks on More Search options link to expand search")
+public void user_clicks_on_more_search_options_link_to_expand_search() {
+     sp.clickSearchOptions();
+}
+
+@And("user enters job reference {string} Employer {string} and Pay Range {string}")
+public void user_enters_job_reference_employer_and_pay_range(String jobReference, String employer, String payRange) {
+     sp.enterJobReference(jobReference);
+     sp.enterEmployer(employer);
+     sp.selectPayRange(payRange);
 }
 
 @And("user clicks on search button")
@@ -50,12 +67,6 @@ public void user_sorts_results_by_newest_date(String sortByText) {
 @And("user clicks on clear filter button")
 public void user_clicks_on_clear_filter_button() {
        sp.clickClearFilters();
-}
-
-@And("the message should contain {string}")
-public void the_message_should_contain(String resultMessage) {
-    String actualSearchResultMessage = sp.getSearchResultMessageJobTitle();
-    //assertThat("Result message does not contain expected text: " + actualSearchResultMessage, containsStringIgnoringCase(resultMessage));
 }
 
 @And("user should be able to click on Next page and Previous page buttons")
@@ -77,10 +88,16 @@ public void user_should_be_able_to_view_the_results_with_the_most_recent_date_po
     Assert.assertTrue("Dates are not sorted with newest date:", sp.areResultsSortedByNewestDate());
 }
 
+@Then("the message should contain {string}")
+public void the_message_should_contain(String resultMessage) {
+    String actualSearchResultMessage = sp.getSearchResultMessage();
+    assertThat("Result message does not contain expected text: " + actualSearchResultMessage, containsStringIgnoringCase(resultMessage));
+}
+
 @Then("job results should be listed with the message contains {string}")
 public void results_should_able_to_view_the_jobs_listed_with_the_message_contains(String resultMessage) {
    sp.areResultsSortedByNewestDate();
-   String actualMessage = sp.getSearchResultMessageJobTitle();
+   String actualMessage = sp.getSearchResultMessage();
   assertThat("Result message does not contain expected text", actualMessage, containsStringIgnoringCase(resultMessage));
    
 }
