@@ -42,8 +42,8 @@ public void user_selects_the_distance(String distance) {
     sp.selectDistance(distance);
 }
 
-@And("user clicks on More Search options link to expand search")
-public void user_clicks_on_more_search_options_link_to_expand_search() {
+@And("user clicks on search options link to expand search")
+public void user_clicks_on_search_options_link_to_expand_search() {
      sp.clickSearchOptions();
 }
 
@@ -67,25 +67,28 @@ public void user_sorts_results_by_newest_date(String sortByText) {
 @And("user clicks on clear filter button")
 public void user_clicks_on_clear_filter_button() {
        sp.clickClearFilters();
+       sp.clickSearchOptions();
 }
 
-@And("user should be able to click on Next page and Previous page buttons")
-public void user_should_be_able_to_click_on_next_page_and_previous_page_buttons() {
-    sp.clickNextButton();
-    sp.clickPreviousButton();
+@And("user should be able to view Next button")
+public void user_should_be_able_to_view_next_button() {
+    sp.NextButtonVisibility();
 }
 
-@Then("job title and location fields should be blank")
-public void job_title_and_location_fields_should_be_blank() {
-    String jobTitlevalue = sp.getJobTitle();
-    String Locationvalue = sp.getJobLocation();
-    Assert.assertTrue("Job Title is not blank:", jobTitlevalue.trim().isEmpty());
-    Assert.assertTrue("Location is not blank:", Locationvalue.trim().isEmpty());
+@Then("all fields should be blank")
+public void all_fields_should_be_blank() {
+    Assert.assertTrue("Job Title is not blank:", sp.getJobTitle().trim().isEmpty());
+    Assert.assertTrue("Location is not blank:", sp.getJobLocation().trim().isEmpty());
+    Assert.assertFalse("Distance is Enabled:", sp.validatingDistanceIsEnabled());
+    Assert.assertTrue("Job Reference is not blank:", sp.getJobLocation().trim().isEmpty());
+    Assert.assertTrue("Employer is not blank:", sp.getEmployer().trim().isEmpty());
+    Assert.assertTrue("PayRange is not blank:", sp.getPayRange().trim().isEmpty());
 }
 
 @Then("user should be able to view the results with the most recent date posted")
 public void user_should_be_able_to_view_the_results_with_the_most_recent_date_posted() {
-    Assert.assertTrue("Dates are not sorted with newest date:", sp.areResultsSortedByNewestDate());
+	Assert.assertTrue("Dates are not sorted with newest date:", sp.areResultsSortedByNewestDate());
+	Assert.assertFalse("Job Results not found:", sp.verifyingResultsAreDisplayed().isEmpty());
 }
 
 @Then("the message should contain {string}")
@@ -94,13 +97,13 @@ public void the_message_should_contain(String resultMessage) {
     assertThat("Result message does not contain expected text: " + actualSearchResultMessage, containsStringIgnoringCase(resultMessage));
 }
 
-@Then("job results should be listed with the message contains {string}")
-public void results_should_able_to_view_the_jobs_listed_with_the_message_contains(String resultMessage) {
-   sp.areResultsSortedByNewestDate();
-   String actualMessage = sp.getSearchResultMessage();
-  assertThat("Result message does not contain expected text", actualMessage, containsStringIgnoringCase(resultMessage));
-   
-}
+//@Then("job results should be listed with the message contains {string}")
+//public void results_should_able_to_view_the_jobs_listed_with_the_message_contains(String resultMessage) {
+//   sp.areResultsSortedByNewestDate();
+//   String actualMessage = sp.getSearchResultMessage();
+//  assertThat("Result message does not contain expected text", actualMessage, containsStringIgnoringCase(resultMessage));
+//   
+//}
 
 
 

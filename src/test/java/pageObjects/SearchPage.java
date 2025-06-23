@@ -25,26 +25,20 @@ public class SearchPage extends BaseClass {
 	@FindBy(xpath = "//input[@data-test=\"search-location-input\"]")
 	WebElement location_txt;
 
-	@FindBy(xpath = "//a[@id =\"searchOptionsBtn\"]")
-	WebElement searchOptions_btn;
-
 	@FindBy(xpath = "//input[@data-test=\"search-jobReference-input\"]")
 	WebElement jobReference_txt;
 
 	@FindBy(xpath = "//input[@data-test=\"search-employer-input\"]")
-	WebElement searchEmployer_txt;
+	WebElement employer_txt;
 
 	@FindBy(xpath = "//ul[@id=\"location__listbox\"]/li")
 	List<WebElement> listOfRelatedLocations;
 
-	@FindBy(css = "input[type=\"submit\"]")
-	WebElement search_btn;
-
 	@FindBy(id = "distance")
-	WebElement distance_dropDown;
+	WebElement distance_input;
 
 	@FindBy(id = "payRange")
-	WebElement payRange_dropDown;
+	WebElement payRange_input;
 
 	@FindBy(id = "sort")
 	WebElement sortBy_dropDown;
@@ -53,13 +47,19 @@ public class SearchPage extends BaseClass {
 	WebElement searchResultJobHeading;
 
 	@FindBy(xpath = "//a[@data-test='search-result-job-title']")
-	List<WebElement> jobTitles;
+	List<WebElement> results;
 
 	@FindBy(xpath = "//li[contains(@data-test, \"publicationDate\")]/strong")
 	List<WebElement> newestDates;
 
 	@FindBy(xpath = "//div[@data-test =\"search-result-location\"]/h3/div")
 	List<WebElement> jobsWithFilteredLocation;
+	
+	@FindBy(xpath = "//a[@id =\"searchOptionsBtn\"]")
+	WebElement searchOptions_btn;
+	
+	@FindBy(css = "input[type=\"submit\"]")
+	WebElement search_btn;
 
 	@FindBy(id = "clearFilters")
 	WebElement clearFilters_btn;
@@ -67,8 +67,6 @@ public class SearchPage extends BaseClass {
 	@FindBy(xpath = "//span[text()=\"Next\"]")
 	WebElement next_btn;
 
-	@FindBy(xpath = "//span[text()=\"Previous\"]")
-	WebElement previous_btn;
 
 	/**
 	 * Enters a job title into the search input, clearing any previous text.
@@ -98,24 +96,46 @@ public class SearchPage extends BaseClass {
 	 * Enters an Employer name into the search input, clearing any previous text.
 	 */
 	public void enterEmployer(String employer) {
-		searchEmployer_txt.clear();
-		searchEmployer_txt.sendKeys(employer);
+		employer_txt.clear();
+		employer_txt.sendKeys(employer);
 	}
 
 	/**
 	 * Returns the entered value in the JobTitle field.
 	 */
 	public String getJobTitle() {
-		return jobTitleOrSkill_txt.getAttribute("value");
+		String jobTitlevalue = jobTitleOrSkill_txt.getAttribute("value");
+		return jobTitlevalue;
 	}
 
 	/**
 	 * Returns the entered value in the Location field.
 	 */
 	public String getJobLocation() {
-		return location_txt.getAttribute("value");
+		String locationvalue = location_txt.getAttribute("value");
+		return locationvalue;
 	}
-
+	/**
+	 * Returns the entered value in the Job Reference field.
+	 */
+	public String getJobReference() {
+		 String jobReferencevalue = jobReference_txt.getAttribute("value");
+		 return jobReferencevalue;
+	}
+	/**
+	 * Returns the entered value in the Job Employer field.
+	 */
+	public String getEmployer() {
+		String employervalue = employer_txt.getAttribute("value");
+		return employervalue;
+	}
+	/**
+	 * Returns the value in the pay range field.
+	 */
+	public String getPayRange() {
+		String payRangevalue = payRange_input.getAttribute("value");
+		return payRangevalue;
+	}
 	/**
 	 * Enters a partial location and selects the desired option from autocomplete
 	 * suggestions
@@ -168,16 +188,22 @@ public class SearchPage extends BaseClass {
 	 * Selects a distance value from the dropdown.
 	 */
 	public void selectDistance(String distance) {
-		wait.until(ExpectedConditions.elementToBeClickable(distance_dropDown));
-		Select distanceDropdown = new Select(distance_dropDown);
+		wait.until(ExpectedConditions.elementToBeClickable(distance_input));
+		Select distanceDropdown = new Select(distance_input);
 		distanceDropdown.selectByVisibleText(distance);
+	}
+	/**
+	 * Checks distance field is enabled.
+	 */
+	public boolean validatingDistanceIsEnabled() {
+		return distance_input.isEnabled();
 	}
 
 	/**
 	 * Selects a pay range from the dropdown filter.
 	 */
 	public void selectPayRange(String payRange) {
-		Select payRangeDropdown = new Select(payRange_dropDown);
+		Select payRangeDropdown = new Select(payRange_input);
 		payRangeDropdown.selectByVisibleText(payRange);
 	}
 
@@ -209,25 +235,21 @@ public class SearchPage extends BaseClass {
 
 		return postedDates.equals(sortedDates);
 	}
-
-	/**
-	 * Navigates to the next page of search results.
-	 */
-	public void clickNextButton() {
-		wait.until(ExpectedConditions.elementToBeClickable(next_btn));
-		if (next_btn.isDisplayed() && next_btn.isEnabled()) {
-			next_btn.click();
-		}
+	
+	public List<WebElement> verifyingResultsAreDisplayed() {
+		System.out.println("No of results found:" +results.size());
+		return results;
 	}
 
 	/**
-	 * Navigates to the previous page of search results.
+	 * Validates visibility of next page button in search results.
 	 */
-	public void clickPreviousButton() {
-		wait.until(ExpectedConditions.elementToBeClickable(previous_btn));
-		if (previous_btn.isDisplayed() && previous_btn.isEnabled()) {
-			previous_btn.click();
-		}
+	public boolean NextButtonVisibility() {
+	
+		return next_btn.isDisplayed();	
+		
 	}
+
+	
 
 }

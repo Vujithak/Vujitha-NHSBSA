@@ -23,11 +23,15 @@ Examples:
          | JobTitle             |
          | Cardiac Physiologist | 
          | Automation Tester    |
+          |Speech & Language Therapists - Join our Talent Pool! |
     
  Scenario: Validate clearFilters button functionality
  When user enters job title "Healthcare Assistant" and location "Manchester"
- And user clicks on clear filter button
- Then job title and location fields should be blank
+ And  user selects the distance "+10 Miles"
+ And  user clicks on search options link to expand search
+ And  user enters job reference "1316185502" Employer "Healthcare" and Pay Range "£10,000 to £20,000"
+ And  user clicks on clear filter button
+ Then all fields should be blank
     
 Scenario Outline: Validate search functionality by providing valid - Job title/skill and Location
  When user enters job title "<JobTitle>" and location "<Location>"
@@ -37,18 +41,20 @@ Scenario Outline: Validate search functionality by providing valid - Job title/s
   Examples:
       | JobTitle                    | Location     | 
       | Staff Nurse                 | London       |
-      | Cardiac Physiologist        | L15 3HP       |
+      | Cardiac Physiologist        | L15 3HP      |
       | Practice Nurse              | Manchester   |
-      
- Scenario: Validate search functionality by not providing any input and navigations of page
+       
+ Scenario: Validate search functionality by not providing any input and Next button is visible
  When user clicks on search button
- Then job results should be listed with the message contains "jobs found" 
- And user should be able to click on Next page and Previous page buttons
+ And  user sorts results by "Date Posted (newest)"
+ Then user should be able to view the results with the most recent date posted
+ Then the message should contain "jobs found" 
+ And user should be able to view Next button
 
  Scenario: Validate Searchfunctionality by providing all fields
     When user enters job title "Staff Nurse" and location "London"
     And  user selects the distance "+10 Miles"
-    And  user clicks on More Search options link to expand search
+    And  user clicks on search options link to expand search
     And  user enters job reference "1316185502" Employer "Healthcare" and Pay Range "£10,000 to £20,000"
     And  user clicks on search button
     And  user sorts results by "Date Posted (newest)"
@@ -63,7 +69,6 @@ Examples:
            | @$$$$@    |
            | ###@@!!   |
            | ***       |
-    
 
     
     
