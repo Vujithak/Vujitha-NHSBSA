@@ -44,10 +44,13 @@ public class SearchPage extends BaseClass {
 	WebElement sortBy_dropDown;
 
 	@FindBy(xpath = "//h1[@id=\"search-results-heading\"]")
-	WebElement searchResultJobHeading;
-
+	WebElement searchResultJobHeading_msg;
+	
+	@FindBy(id = "no-result-title")
+	WebElement resultPage_msg;
+	
 	@FindBy(xpath = "//a[@data-test='search-result-job-title']")
-	List<WebElement> results;
+	List<WebElement> jobResults;
 
 	@FindBy(xpath = "//li[contains(@data-test, \"publicationDate\")]/strong")
 	List<WebElement> newestDates;
@@ -180,7 +183,15 @@ public class SearchPage extends BaseClass {
 	 */
 	public String getSearchResultMessage() {
 
-		return searchResultJobHeading.getText();
+		return searchResultJobHeading_msg.getText();
+         
+	}
+	/**
+	 * Returns the result page message when no results found.
+	 */
+	public String getNoResultFoundMessage() {
+
+		return resultPage_msg.getText();
 
 	}
 
@@ -235,10 +246,32 @@ public class SearchPage extends BaseClass {
 
 		return postedDates.equals(sortedDates);
 	}
+	/**
+	 * Validates results are displaying when search is performed.
+	 */
+	public boolean doAllJobTitlesMatchSearchPreference(String jobTitle) {
+
+		String expected = jobTitle.trim().toLowerCase();
+		for (WebElement jobResult : jobResults) {
+			String actualTitle = jobResult.getText().trim().toLowerCase();
+			System.out.println("The job Titles before validation:" +actualTitle);
+			if (!actualTitle.contains(expected))
+			{
+				System.out.println("The job Titles are:" +actualTitle);
+				return false;
+			}
+
+		}
+		return true;
+		
+	}
 	
+	/**
+	 * Validates results are displaying when search is performed.
+	 */
 	public List<WebElement> verifyingResultsAreDisplayed() {
-		System.out.println("No of results found:" +results.size());
-		return results;
+		System.out.println("No of results found:" +jobResults.size());
+		return jobResults;
 	}
 
 	/**

@@ -1,5 +1,7 @@
 package stepDefinitions;
 
+import static org.junit.Assert.assertEquals;
+
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -63,7 +65,6 @@ public void user_clicks_on_search_button() {
 public void user_sorts_results_by_newest_date(String sortByText) {
     sp.selectSortOption(sortByText);
 }
-
 @And("user clicks on clear filter button")
 public void user_clicks_on_clear_filter_button() {
        sp.clickClearFilters();
@@ -73,6 +74,21 @@ public void user_clicks_on_clear_filter_button() {
 @And("user should be able to view Next button")
 public void user_should_be_able_to_view_next_button() {
     sp.NextButtonVisibility();
+}
+
+@And("the message should contain {string}")
+public void the_message_should_contain(String resultMessage) {
+    String actualSearchResultMessage = sp.getSearchResultMessage();
+    assertThat("Result message does not contain expected text: " + actualSearchResultMessage, containsStringIgnoringCase(resultMessage));
+}
+
+@Then("user should see job results containing {string}")
+public void user_should_see_job_results_containing(String jobTitle) {
+    Assert.assertTrue("Job titles did not match expected search:", sp.doAllJobTitlesMatchSearchPreference(jobTitle));
+}
+@Then("the job results should be sorted with newest Date Posted")
+public void the_job_results_should_be_sorted_with_newest_Date_Posted() {
+	Assert.assertTrue("Dates are not sorted with newest date:", sp.areResultsSortedByNewestDate());
 }
 
 @Then("all fields should be blank")
@@ -87,25 +103,14 @@ public void all_fields_should_be_blank() {
 
 @Then("user should be able to view the results with the most recent date posted")
 public void user_should_be_able_to_view_the_results_with_the_most_recent_date_posted() {
-	Assert.assertTrue("Dates are not sorted with newest date:", sp.areResultsSortedByNewestDate());
 	Assert.assertFalse("Job Results not found:", sp.verifyingResultsAreDisplayed().isEmpty());
+	Assert.assertTrue("Dates are not sorted with newest date:", sp.areResultsSortedByNewestDate());
 }
 
-@Then("the message should contain {string}")
-public void the_message_should_contain(String resultMessage) {
-    String actualSearchResultMessage = sp.getSearchResultMessage();
-    assertThat("Result message does not contain expected text: " + actualSearchResultMessage, containsStringIgnoringCase(resultMessage));
+@Then("the results page should display message {string}")
+public void the_results_page_should_display_message(String resultPageMessage) {
+    String actualMessage = sp.getNoResultFoundMessage(); 
+    Assert.assertEquals("Expected 'No result found' message not displayed", resultPageMessage, actualMessage);
 }
-
-//@Then("job results should be listed with the message contains {string}")
-//public void results_should_able_to_view_the_jobs_listed_with_the_message_contains(String resultMessage) {
-//   sp.areResultsSortedByNewestDate();
-//   String actualMessage = sp.getSearchResultMessage();
-//  assertThat("Result message does not contain expected text", actualMessage, containsStringIgnoringCase(resultMessage));
-//   
-//}
-
-
-
 
 }
