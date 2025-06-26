@@ -88,6 +88,7 @@ public class SearchPage {
 	 */
 	public void acceptCookies() {
 		acceptCookies_bt.click();
+		wait.until(ExpectedConditions.invisibilityOf(acceptCookies_bt));
 	}
 
 	/**
