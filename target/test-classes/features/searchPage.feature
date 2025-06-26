@@ -1,80 +1,46 @@
 Feature: NHS Job Search functionality.
 Background:
 Given user is on the NHS job search page with title "Search for jobs in the NHS"
+And click on Accept Cookies button.
     
- Scenario Outline: Validate Searchfunctionality by providing only Job Title
-    When user enters job title "<JobTitle>"
-    And user clicks on search button
-    Then user should see job results containing "<JobTitle>"
-    And  user sorts results by "Date Posted (newest)"
-    Then the job results should be sorted with newest Date Posted
-Examples:
-         | JobTitle               |
-         | Cardiac Physiologist   | 
-         | Staff Nurse            |
+Scenario Outline: Validate search functionality by providing various combinations
+  When user performs search with "<jobTitle>", "<location>", "<distance>", "<jobReference>", "<employer>", "<payRange>"
+  And user clicks on search button
+  Then user should get list of jobs with matching preferences
+  And the search message should contain "<searchResultMessage>"
+  And user sorts results by "Date Posted (newest)"
+  Then the job results should be sorted with newest Date Posted
 
-         
- Scenario Outline: Validate search functionality by providing only Job Location 
-    When user enter partial location "<PartialLocation>" and selects "<Location>" from suggestions
-    And  user clicks on search button
-    And  user sorts results by "Date Posted (newest)"
-    Then user should be able to view the results with the most recent date posted
-    And the message should contain "<Location>"
-Examples:
-         | PartialLocation | Location   |
-         | Liver           | Liverpool  |
-         | Man             | Manchester |
-
-Scenario Outline: Validate search functionality by providing valid - Job title/skill and Location
- When user enters job title "<JobTitle>" and location "<Location>"
- And user clicks on search button
- And user sorts results by "Date Posted (newest)"
- Then user should be able to view the results with the most recent date posted
   Examples:
-      | JobTitle                    | Location     | 
-      | Staff Nurse                 | London       |
-      | Cardiac Physiologist        | L15 3HP      |
-      | Practice Nurse              | Manchester   |
-
- Scenario: Validate Searchfunctionality by providing all fields
-    When user enters job title "Staff Nurse" and location "London"
-    And  user selects the distance "+10 Miles"
-    And  user clicks on search options link to expand search
-    And  user enters job reference "1316185502" Employer "Healthcare" and Pay Range "£10,000 to £20,000"
-    And  user clicks on search button
-    And  user sorts results by "Date Posted (newest)"
-    Then user should be able to view the results with the most recent date posted
-    
+  | jobTitle                                               | location    | distance | jobReference | employer         | payRange               | searchResultMessage                                                             |
+  | Cardiac Physiologist                                   |             |          |              |                  |                        | jobs found for Cardiac Physiologist                                             |
+  |                                                        | Manchester  | 10       |              |                  |                        | jobs found within 10 miles of Manchester                                         |
+  |                                                        |             |          | 1316185502   |                  |                        | job found for 1316185502                                                        |
+  |                                                        |             |          |              | NHS Resolution   |                        | jobs found for NHS Resolution                                                   |
+  |                                                        |             |          |              |                  | £10,000 to £20,000     | jobs found                                                                      |
+  | Staff Nurse                                            | Sheffield   |          |              |                  |                        | jobs found for Staff Nurse within 5 miles of Sheffield                          |
+  | Radiographer                                           |             |          | 1316185502   |                  |                        | job found for 1316185502                                                        |
+  | Staff Nurse                                            | Manchester  |          |              | Healthcare       |                        | jobs found for Staff Nurse within 5 miles of Manchester for Healthcare          |
+  | Test Analyst                                           | Sheffield   | 30       | 1316185502   | Healthcare       | £10,000 to £20,000     | job found for 1316185502                                                        |
+  |                                                        |             |          |              |                  |                        | jobs found                                                                      |
+  | Speech & Language Therapists - Join our Talent Pool!   |             |          |              |                  |                        | jobs found for Speech & Language Therapists - Join our Talent Pool!             |
+  
  Scenario: Validate clearFilters button functionality
- When user enters job title "Healthcare Assistant" and location "Manchester"
- And  user selects the distance "+10 Miles"
- And  user clicks on search options link to expand search
- And  user enters job reference "1316185502" Employer "Healthcare" and Pay Range "£10,000 to £20,000"
+ When user performs search with "Test Analyst", "London", "10", "1316185502", "Healthcare", "£10,000 to £20,000"
  And  user clicks on clear filter button
  Then all fields should be blank
        
- Scenario: Validate search functionality by not providing any input and Next button is visible
- When user clicks on search button
- And  user sorts results by "Date Posted (newest)"
- Then user should be able to view the results with the most recent date posted
- And the message should contain "jobs found" 
- And user should be able to view Next button
 
 Scenario Outline: Validate Searchfunctionality by providing special characters in Job Title field
-    When user enters job title "<JobTitle>"
+    When user performs search with "<jobTitle>", "<location>", "<distance>", "<jobReference>", "<employer>", "<payRange>"
     And  user clicks on search button
-    Then the results page should display message "No result found"
-    And the message should contain "No result found for <JobTitle>"  
+    Then the results page should display message "<searchResultMessage>"
 Examples:
-           | JobTitle  |
-           | @$$$$@    |
-           | ###@@!!   |
+    | jobTitle   | location | distance | jobReference | employer | payRange | searchResultMessage             |
+    | $%^£££     |          |          |              |          |          | No result found                 |
+    |            | $£%%%    |      5   |     c09      |          |          | Location not found              |
+    |            |          |          | %^Tc%$&%^    |          |          | No result found                 |
+    |            |          |          |              | @@@BM    |          | No result found                 |
       
 
-    
-    
- 
- 
-
-     
     

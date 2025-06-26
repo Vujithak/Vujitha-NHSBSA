@@ -1,16 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: testRunner.TestRunner
 -------------------------------------------------------------------------------
-Tests run: 13, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 48.88 s <<< FAILURE! -- in testRunner.TestRunner
-NHS Job Search functionality..Validate results sorting by Date Posted (newest) -- Time elapsed: 1.915 s <<< ERROR!
-io.cucumber.junit.UndefinedStepException: 
-The step 'clicks on the search button' is undefined.
-You can implement this step using the snippet(s) below:
-
-@When("clicks on the search button")
-public void clicks_on_the_search_button() {
-    // Write code here that turns the phrase above into concrete actions
-    throw new io.cucumber.java.PendingException();
-}
-
-
+Tests run: 16, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 79.25 s -- in testRunner.TestRunner

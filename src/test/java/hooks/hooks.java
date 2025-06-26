@@ -1,8 +1,6 @@
 package hooks;
 
 import java.io.IOException;
-import java.util.Properties;
-
 import org.openqa.selenium.WebDriver;
 
 import factory.Base;
@@ -12,21 +10,19 @@ import io.cucumber.java.Before;
 public class hooks {
 	
 	WebDriver driver;
-	Properties p;
 	
 	@Before
 	public void setup() throws IOException
-	{
-	driver=Base.initilizeBrowser();
-	p=Base.getProperties();
-	driver.get(p.getProperty("appURL"));
-	driver.manage().window().maximize();
+	{	
+		driver = Base.initialiseBrowser();
+        String url = Base.getProperties().getProperty("appURL");
+        driver.get(url);
 	}
 	
 	@After
 	public void teardown()
 	{
-	 driver.quit();	
+		Base.getDriver().quit();	
 	}
 
 }

@@ -1,5 +1,6 @@
 package pageObjects;
 
+import java.time.Duration;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -7,17 +8,29 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.Locale;
 
+import factory.Base;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class SearchPage extends BaseClass {
+public class SearchPage {
 
-	public SearchPage(WebDriver driver) {
-		super(driver);
+	WebDriver driver;
+	WebDriverWait wait;
+
+	public SearchPage() {
+		this.driver = Base.getDriver();
+		PageFactory.initElements(driver, this);
+		wait = new WebDriverWait(Base.getDriver(), Duration.ofSeconds(10));
 	}
+
+	@FindBy(id = "accept-cookies")
+	WebElement acceptCookies_bt;
 
 	@FindBy(xpath = "//input[@data-test=\"search-jobTitle-input\"]")
 	WebElement jobTitleOrSkill_txt;
@@ -28,10 +41,10 @@ public class SearchPage extends BaseClass {
 	@FindBy(xpath = "//input[@data-test=\"search-jobReference-input\"]")
 	WebElement jobReference_txt;
 
-	@FindBy(xpath = "//input[@data-test=\"search-employer-input\"]")
+	@FindBy(id = "employer")
 	WebElement employer_txt;
 
-	@FindBy(xpath = "//ul[@id=\"location__listbox\"]/li")
+	@FindBy(xpath = "//ul[@id=\"location__listbox\"]//li")
 	List<WebElement> listOfRelatedLocations;
 
 	@FindBy(id = "distance")
@@ -45,11 +58,11 @@ public class SearchPage extends BaseClass {
 
 	@FindBy(xpath = "//h1[@id=\"search-results-heading\"]")
 	WebElement searchResultJobHeading_msg;
-	
-	@FindBy(id = "no-result-title")
+
+	@FindBy(xpath = "//main[contains(@class, \"nhsuk-main-wrapper\")]//*[@id=\"no-result-title\" or @data-test=\"search-result-query\"]")
 	WebElement resultPage_msg;
-	
-	@FindBy(xpath = "//a[@data-test='search-result-job-title']")
+
+	@FindBy(xpath = "//li[@data-test=\"search-result\"]")
 	List<WebElement> jobResults;
 
 	@FindBy(xpath = "//li[contains(@data-test, \"publicationDate\")]/strong")
@@ -57,11 +70,11 @@ public class SearchPage extends BaseClass {
 
 	@FindBy(xpath = "//div[@data-test =\"search-result-location\"]/h3/div")
 	List<WebElement> jobsWithFilteredLocation;
-	
+
 	@FindBy(xpath = "//a[@id =\"searchOptionsBtn\"]")
 	WebElement searchOptions_btn;
-	
-	@FindBy(css = "input[type=\"submit\"]")
+
+	@FindBy(xpath = "//input[@data-test=\"search-button\"]")
 	WebElement search_btn;
 
 	@FindBy(id = "clearFilters")
@@ -70,25 +83,30 @@ public class SearchPage extends BaseClass {
 	@FindBy(xpath = "//span[text()=\"Next\"]")
 	WebElement next_btn;
 
+	/**
+	 * This method accepts cookies
+	 */
+	public void acceptCookies() {
+		acceptCookies_bt.click();
+	}
 
 	/**
-	 * Enters a job title into the search input, clearing any previous text.
+	 * Enters the job title
 	 */
 	public void enterJobTitle(String jobTitle) {
 		jobTitleOrSkill_txt.clear();
 		jobTitleOrSkill_txt.sendKeys(jobTitle);
 	}
-
 	/**
-	 * Inputs a full job location into the search location field.
+	 * Enters the job title
 	 */
-	public void enterJobLocation(String jobLocation) {
+	public void enterLocation(String location) {
 		location_txt.clear();
-		location_txt.sendKeys(jobLocation);
+		location_txt.sendKeys(location);
 	}
 
 	/**
-	 * Enters a job Reference into the search input, clearing any previous text.
+	 * Enters a job Reference into the search input
 	 */
 	public void enterJobReference(String jobReference) {
 		jobReference_txt.clear();
@@ -96,7 +114,7 @@ public class SearchPage extends BaseClass {
 	}
 
 	/**
-	 * Enters an Employer name into the search input, clearing any previous text.
+	 * Enters an Employer name into the search input
 	 */
 	public void enterEmployer(String employer) {
 		employer_txt.clear();
@@ -104,64 +122,10 @@ public class SearchPage extends BaseClass {
 	}
 
 	/**
-	 * Returns the entered value in the JobTitle field.
-	 */
-	public String getJobTitle() {
-		String jobTitlevalue = jobTitleOrSkill_txt.getAttribute("value");
-		return jobTitlevalue;
-	}
-
-	/**
-	 * Returns the entered value in the Location field.
-	 */
-	public String getJobLocation() {
-		String locationvalue = location_txt.getAttribute("value");
-		return locationvalue;
-	}
-	/**
-	 * Returns the entered value in the Job Reference field.
-	 */
-	public String getJobReference() {
-		 String jobReferencevalue = jobReference_txt.getAttribute("value");
-		 return jobReferencevalue;
-	}
-	/**
-	 * Returns the entered value in the Job Employer field.
-	 */
-	public String getEmployer() {
-		String employervalue = employer_txt.getAttribute("value");
-		return employervalue;
-	}
-	/**
-	 * Returns the value in the pay range field.
-	 */
-	public String getPayRange() {
-		String payRangevalue = payRange_input.getAttribute("value");
-		return payRangevalue;
-	}
-	/**
-	 * Enters a partial location and selects the desired option from autocomplete
-	 * suggestions
-	 */
-	public void enterLocation(String partialLocation, String joblocation) {
-		location_txt.clear();
-		location_txt.sendKeys(partialLocation);
-
-		for (WebElement selectedLocation : listOfRelatedLocations) {
-			String actualLocation = selectedLocation.getText().trim().toLowerCase();
-			if (actualLocation.contains(joblocation.trim().toLowerCase())) {
-				selectedLocation.click();
-				break;
-			}
-
-		}
-	}
-
-	/**
 	 * Clicks the 'Search Options' button to expand additional filters.
 	 */
 	public void clickSearchOptions() {
-		searchOptions_btn.click();
+	    wait.until(ExpectedConditions.elementToBeClickable(searchOptions_btn)).click();
 	}
 
 	/**
@@ -183,13 +147,14 @@ public class SearchPage extends BaseClass {
 	 */
 	public String getSearchResultMessage() {
 
-		return searchResultJobHeading_msg.getText();
-         
+		return searchResultJobHeading_msg.getText().trim();
+
 	}
+
 	/**
 	 * Returns the result page message when no results found.
 	 */
-	public String getNoResultFoundMessage() {
+	public String getErrorMessage() {
 
 		return resultPage_msg.getText();
 
@@ -200,18 +165,17 @@ public class SearchPage extends BaseClass {
 	 */
 	public void selectDistance(String distance) {
 		wait.until(ExpectedConditions.elementToBeClickable(distance_input));
-		Select distanceDropdown = new Select(distance_input);
-		distanceDropdown.selectByVisibleText(distance);
-	}
-	/**
-	 * Checks distance field is enabled.
-	 */
-	public boolean validatingDistanceIsEnabled() {
-		return distance_input.isEnabled();
+
+		if (distance_input.isEnabled()) {
+			Select select = new Select(distance_input);
+			select.selectByValue(distance);
+		} else {
+			System.out.println("Distance dropdown is disabled.");
+		}
 	}
 
 	/**
-	 * Selects a pay range from the dropdown filter.
+	 * Selects a pay range
 	 */
 	public void selectPayRange(String payRange) {
 		Select payRangeDropdown = new Select(payRange_input);
@@ -219,11 +183,11 @@ public class SearchPage extends BaseClass {
 	}
 
 	/**
-	 * Sorts the search results based on the selected sorting option.
+	 * Selects the SortOption as Date Posted (newest)
 	 */
-	public void selectSortOption(String sortByText) {
+	public void selectSortOption(String sortByNewestDate) {
 		Select dropdown = new Select(sortBy_dropDown);
-		dropdown.selectByVisibleText(sortByText);
+		dropdown.selectByVisibleText(sortByNewestDate);
 	}
 
 	/**
@@ -246,43 +210,68 @@ public class SearchPage extends BaseClass {
 
 		return postedDates.equals(sortedDates);
 	}
-	/**
-	 * Validates results are displaying when search is performed.
-	 */
-	public boolean doAllJobTitlesMatchSearchPreference(String jobTitle) {
 
-		String expected = jobTitle.trim().toLowerCase();
-		for (WebElement jobResult : jobResults) {
-			String actualTitle = jobResult.getText().trim().toLowerCase();
-			System.out.println("The job Titles before validation:" +actualTitle);
-			if (!actualTitle.contains(expected))
-			{
-				System.out.println("The job Titles are:" +actualTitle);
-				return false;
-			}
-
-		}
-		return true;
-		
-	}
-	
 	/**
 	 * Validates results are displaying when search is performed.
 	 */
 	public List<WebElement> verifyingResultsAreDisplayed() {
-		System.out.println("No of results found:" +jobResults.size());
+		System.out.println("No of results found:" + jobResults.size());
 		return jobResults;
 	}
 
 	/**
-	 * Validates visibility of next page button in search results.
+	 * Returns the entered value in the JobTitle field.
 	 */
-	public boolean NextButtonVisibility() {
-	
-		return next_btn.isDisplayed();	
-		
+	public String getJobTitle() {
+		String jobTitlevalue = jobTitleOrSkill_txt.getAttribute("value");
+		return jobTitlevalue;
 	}
 
+	/**
+	 * Returns the entered value in the Location field.
+	 */
+	public String getJobLocation() {
+		String locationvalue = location_txt.getAttribute("value");
+		return locationvalue;
+	}
+
+	/**
+	 * Returns the entered value in the distance field.
+	 */
+	public String getDistance() {
+		String distancevalue = distance_input.getAttribute("value");
+		return distancevalue;
+	}
+
+	/**
+	 * Returns the entered value in the Job Reference field.
+	 */
+	public String getJobReference() {
+		String jobReferencevalue = jobReference_txt.getAttribute("value");
+		return jobReferencevalue;
+	}
+
+	/**
+	 * Returns the entered value in the Job Employer field.
+	 */
+	public String getEmployer() {
+		String employervalue = employer_txt.getAttribute("value");
+		return employervalue;
+	}
+
+	/**
+	 * Returns the value in the pay range field.
+	 */
+	public String getPayRange() {
+		String payRangevalue = payRange_input.getAttribute("value");
+		return payRangevalue;
+	}
+
+	public void resetSearchPage() {
+	    // Wait for job title input field to ensure the page is loaded
+	    wait.until(ExpectedConditions.visibilityOfElementLocated(
+	        By.xpath("//input[@data-test='search-jobTitle-input']")));
+	}
 	
 
 }

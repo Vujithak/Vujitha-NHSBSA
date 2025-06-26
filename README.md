@@ -7,11 +7,9 @@ This automation project validates the search functionality of the NHS Jobs websi
 - Maven installed and configured
 - Chrome/Firefox browsers installed
 
-## Features Covered
-- Search with job title, location, employer, and job reference
-- Autocomplete location selection
-- Dropdown and filters: distance, pay range, sort by
-- Pagination handling
+## Scenaiors Covered
+- Search with job title, location, distance, jobreference, employer, and payRange with different set of inputs
+- Clear button validation
 - Message validation
 - Invalid input validation – e.g., special characters
 - Works in both **Chrome** and **Firefox**
@@ -72,4 +70,3 @@ To view:
 
 ## Notes
 - WebDriverManager is used — no need for local `.exe` drivers.
-- Covered P1 and some P2 scenarios.
