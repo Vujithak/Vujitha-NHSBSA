@@ -3,7 +3,7 @@ Background:
 Given user is on the NHS job search page with title "Search for jobs in the NHS"
 And click on Accept Cookies button.
  
-@positiveValidation   
+@positiveValidation @regression
 Scenario Outline: Validate search functionality by providing various combinations
   When user performs search with "<jobTitle>", "<location>", "<distance>", "<jobReference>", "<employer>", "<payRange>"
   And user clicks on search button
@@ -23,7 +23,7 @@ Scenario Outline: Validate search functionality by providing various combination
   | Test Analyst                                           | Sheffield   | 30       | 1316185502   | Healthcare       | £10,000 to £20,000     | job found for 1316185502                                                        |
   |                                                        |             |          |              |                  |                        | jobs found                                                                      |
   
-  
+@positiveValidation 
  Scenario: Validate clearFilters button functionality
  When user performs search with "Test Analyst", "London", "10", "1316185502", "Healthcare", "£10,000 to £20,000"
  And  user clicks on clear filter button
