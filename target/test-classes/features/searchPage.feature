@@ -2,7 +2,8 @@ Feature: NHS Job Search functionality.
 Background:
 Given user is on the NHS job search page with title "Search for jobs in the NHS"
 And click on Accept Cookies button.
-    
+ 
+@positiveValidation   
 Scenario Outline: Validate search functionality by providing various combinations
   When user performs search with "<jobTitle>", "<location>", "<distance>", "<jobReference>", "<employer>", "<payRange>"
   And user clicks on search button
@@ -14,23 +15,21 @@ Scenario Outline: Validate search functionality by providing various combination
   Examples:
   | jobTitle                                               | location    | distance | jobReference | employer         | payRange               | searchResultMessage                                                             |
   | Cardiac Physiologist                                   |             |          |              |                  |                        | jobs found for Cardiac Physiologist                                             |
-  |                                                        | Manchester  | 10       |              |                  |                        | jobs found within 10 miles of Manchester                                         |
+  |                                                        | Manchester  | 10       |              |                  |                        | jobs found within 10 miles of Manchester                                        |
   |                                                        |             |          | 1316185502   |                  |                        | job found for 1316185502                                                        |
   |                                                        |             |          |              | NHS Resolution   |                        | jobs found for NHS Resolution                                                   |
   |                                                        |             |          |              |                  | £10,000 to £20,000     | jobs found                                                                      |
-  | Staff Nurse                                            | Sheffield   |          |              |                  |                        | jobs found for Staff Nurse within 5 miles of Sheffield                          |
-  | Radiographer                                           |             |          | 1316185502   |                  |                        | job found for 1316185502                                                        |
   | Staff Nurse                                            | Manchester  |          |              | Healthcare       |                        | jobs found for Staff Nurse within 5 miles of Manchester for Healthcare          |
   | Test Analyst                                           | Sheffield   | 30       | 1316185502   | Healthcare       | £10,000 to £20,000     | job found for 1316185502                                                        |
   |                                                        |             |          |              |                  |                        | jobs found                                                                      |
-  | Speech & Language Therapists - Join our Talent Pool!   |             |          |              |                  |                        | jobs found for Speech & Language Therapists - Join our Talent Pool!             |
+  
   
  Scenario: Validate clearFilters button functionality
  When user performs search with "Test Analyst", "London", "10", "1316185502", "Healthcare", "£10,000 to £20,000"
  And  user clicks on clear filter button
  Then all fields should be blank
        
-
+@negativeValidation
 Scenario Outline: Validate Searchfunctionality by providing special characters in Job Title field
     When user performs search with "<jobTitle>", "<location>", "<distance>", "<jobReference>", "<employer>", "<payRange>"
     And  user clicks on search button

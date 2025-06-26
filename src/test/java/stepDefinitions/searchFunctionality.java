@@ -26,7 +26,7 @@ public class searchFunctionality {
 
 	@When("user performs search with {string}, {string}, {string}, {string}, {string}, {string}")
 	public void user_performs_search_with(String jobTitle, String location, String distance, String jobReference,String employer, String payRange) {
-		jobSearchPage.resetSearchPage();
+		
 		jobSearchPage.enterJobTitle(jobTitle);
 		
 		

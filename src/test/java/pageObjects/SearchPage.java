@@ -268,11 +268,7 @@ public class SearchPage {
 		return payRangevalue;
 	}
 
-	public void resetSearchPage() {
-	    // Wait for job title input field to ensure the page is loaded
-	    wait.until(ExpectedConditions.visibilityOfElementLocated(
-	        By.xpath("//input[@data-test='search-jobTitle-input']")));
-	}
+
 	
 
 }
